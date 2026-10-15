@@ -1,0 +1,3027 @@
+{
+  "library": "toshiba-ac 0.3.13",
+  "states": {
+    "cool_on": {
+      "hex": "3042164131640010181effffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 22,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "OFF",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 24,
+        "outdoor_temperature": 30,
+        "self_cleaning": "OFF"
+      }
+    },
+    "heat_off": {
+      "hex": "31431534414b031013fdffffffff10ffffffff",
+      "decoded": {
+        "status": "OFF",
+        "mode": "HEAT",
+        "temperature": 21,
+        "fan_mode": "MEDIUM",
+        "swing_mode": "SWING_VERTICAL",
+        "power_selection": "POWER_75",
+        "merit_b": "OFF",
+        "merit_a": "ECO",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 19,
+        "outdoor_temperature": -3,
+        "self_cleaning": "OFF"
+      }
+    },
+    "heat_8c": {
+      "hex": "30431841316404100f02ffffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "HEAT",
+        "temperature": 24,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "HEATING_8C",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 15,
+        "outdoor_temperature": 2,
+        "self_cleaning": "OFF"
+      }
+    },
+    "heat_8c_merit_b_fireplace": {
+      "hex": "30431841316424180f02ffffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "HEAT",
+        "temperature": 24,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "FIREPLACE_1",
+        "merit_a": "HEATING_8C",
+        "air_pure_ion": "ON",
+        "indoor_temperature": 15,
+        "outdoor_temperature": 2,
+        "self_cleaning": "OFF"
+      }
+    },
+    "auto_hipower": {
+      "hex": "30411836424b0110160affffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "AUTO",
+        "temperature": 24,
+        "fan_mode": "HIGH",
+        "swing_mode": "SWING_HORIZONTAL",
+        "power_selection": "POWER_75",
+        "merit_b": "OFF",
+        "merit_a": "HIGH_POWER",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 22,
+        "outdoor_temperature": 10,
+        "self_cleaning": "OFF"
+      }
+    },
+    "dry_quiet": {
+      "hex": "30441a3143320a101a1cffffffff18ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "DRY",
+        "temperature": 26,
+        "fan_mode": "QUIET",
+        "swing_mode": "SWING_VERTICAL_AND_HORIZONTAL",
+        "power_selection": "POWER_50",
+        "merit_b": "OFF",
+        "merit_a": "CDU_SILENT_2",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 26,
+        "outdoor_temperature": 28,
+        "self_cleaning": "ON"
+      }
+    },
+    "fan_fixed": {
+      "hex": "3045193352640010177effffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "FAN",
+        "temperature": 25,
+        "fan_mode": "MEDIUM_LOW",
+        "swing_mode": "FIXED_3",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "OFF",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 23,
+        "outdoor_temperature": -1,
+        "self_cleaning": "OFF"
+      }
+    },
+    "eco_silent": {
+      "hex": "30421a355364031019ecffffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 26,
+        "fan_mode": "MEDIUM_HIGH",
+        "swing_mode": "FIXED_4",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "ECO",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 25,
+        "outdoor_temperature": -20,
+        "self_cleaning": "OFF"
+      }
+    },
+    "silent_1": {
+      "hex": "30421a355364021019ecffffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 26,
+        "fan_mode": "MEDIUM_HIGH",
+        "swing_mode": "FIXED_4",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "CDU_SILENT_1",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 25,
+        "outdoor_temperature": -20,
+        "self_cleaning": "OFF"
+      }
+    },
+    "merit_b_new_off": {
+      "hex": "30421a355364101019ecffffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 26,
+        "fan_mode": "MEDIUM_HIGH",
+        "swing_mode": "FIXED_4",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "OFF",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 25,
+        "outdoor_temperature": -20,
+        "self_cleaning": "OFF"
+      }
+    },
+    "comfort_sleep": {
+      "hex": "30421a4131640510197fffffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 26,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "SLEEP_CARE",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 25,
+        "outdoor_temperature": null,
+        "self_cleaning": "OFF"
+      }
+    },
+    "floor": {
+      "hex": "30431a41316406101980ffffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "HEAT",
+        "temperature": 26,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "FLOOR",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 25,
+        "outdoor_temperature": null,
+        "self_cleaning": "OFF"
+      }
+    },
+    "comfort": {
+      "hex": "30421a413164071019ffffffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 26,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "COMFORT",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 25,
+        "outdoor_temperature": null,
+        "self_cleaning": "OFF"
+      }
+    },
+    "self_cleaning": {
+      "hex": "31421a413164001019ffffffffff18ffffffff",
+      "decoded": {
+        "status": "OFF",
+        "mode": "COOL",
+        "temperature": 26,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "OFF",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 25,
+        "outdoor_temperature": null,
+        "self_cleaning": "ON"
+      }
+    },
+    "no_mode": {
+      "hex": "02000041316400101914ffffffff10ffffffff",
+      "decoded": {
+        "status": null,
+        "mode": null,
+        "temperature": 0,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "OFF",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 25,
+        "outdoor_temperature": 20,
+        "self_cleaning": "OFF"
+      }
+    },
+    "partial_status": {
+      "hex": "30ffffffffffffffffffffffffffffffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": null,
+        "temperature": null,
+        "fan_mode": null,
+        "swing_mode": null,
+        "power_selection": null,
+        "merit_b": null,
+        "merit_a": null,
+        "air_pure_ion": null,
+        "indoor_temperature": null,
+        "outdoor_temperature": null,
+        "self_cleaning": null
+      }
+    },
+    "partial_temperature": {
+      "hex": "ffff19ffffffffffffffffffffffffffffffff",
+      "decoded": {
+        "status": null,
+        "mode": null,
+        "temperature": 25,
+        "fan_mode": null,
+        "swing_mode": null,
+        "power_selection": null,
+        "merit_b": null,
+        "merit_a": null,
+        "air_pure_ion": null,
+        "indoor_temperature": null,
+        "outdoor_temperature": null,
+        "self_cleaning": null
+      }
+    },
+    "partial_merit": {
+      "hex": "fffffffffffff3ffffffffffffffffffffffff",
+      "decoded": {
+        "status": null,
+        "mode": null,
+        "temperature": null,
+        "fan_mode": null,
+        "swing_mode": null,
+        "power_selection": null,
+        "merit_b": null,
+        "merit_a": "ECO",
+        "air_pure_ion": null,
+        "indoor_temperature": null,
+        "outdoor_temperature": null,
+        "self_cleaning": null
+      }
+    },
+    "extra_bytes": {
+      "hex": "3042164131640010181effffffff10ffffffff0102030405",
+      "decoded": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 22,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "OFF",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 24,
+        "outdoor_temperature": 30,
+        "self_cleaning": "OFF"
+      }
+    },
+    "unknown_fan": {
+      "hex": "3042167731640010181effffffff10ffffffff",
+      "decoded": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 22,
+        "fan_mode": "UNKNOWN",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "OFF",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 24,
+        "outdoor_temperature": 30,
+        "self_cleaning": "OFF"
+      }
+    }
+  },
+  "device_temperature": {
+    "heat_8c": 8,
+    "heat_8c_merit_b_fireplace": 8,
+    "cool_on": 22,
+    "heat_off": 21
+  },
+  "updates": [
+    {
+      "start": "cool_on",
+      "apply": "partial_status",
+      "changed": false,
+      "state": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 22,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "OFF",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 24,
+        "outdoor_temperature": 30,
+        "self_cleaning": "OFF"
+      }
+    },
+    {
+      "start": "cool_on",
+      "apply": "partial_temperature",
+      "changed": true,
+      "state": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 25,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "OFF",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 24,
+        "outdoor_temperature": 30,
+        "self_cleaning": "OFF"
+      }
+    },
+    {
+      "start": "cool_on",
+      "apply": "partial_merit",
+      "changed": true,
+      "state": {
+        "status": "ON",
+        "mode": "COOL",
+        "temperature": 25,
+        "fan_mode": "AUTO",
+        "swing_mode": "OFF",
+        "power_selection": "POWER_100",
+        "merit_b": "OFF",
+        "merit_a": "ECO",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 24,
+        "outdoor_temperature": 30,
+        "self_cleaning": "OFF"
+      }
+    },
+    {
+      "start": "cool_on",
+      "apply": "heat_off",
+      "changed": true,
+      "state": {
+        "status": "OFF",
+        "mode": "HEAT",
+        "temperature": 21,
+        "fan_mode": "MEDIUM",
+        "swing_mode": "SWING_VERTICAL",
+        "power_selection": "POWER_75",
+        "merit_b": "OFF",
+        "merit_a": "ECO",
+        "air_pure_ion": "OFF",
+        "indoor_temperature": 19,
+        "outdoor_temperature": -3,
+        "self_cleaning": "OFF"
+      }
+    }
+  ],
+  "encodings": {
+    "status_on": "30ffffffffffffffffffffffffffffffffffff",
+    "mode_cool": "ff42ffffffffffffffffffffffffffffffffff",
+    "temperature_minus_1": "ffff7effffffffffffffffffffffffffffffff",
+    "temperature_30": "ffff1effffffffffffffffffffffffffffffff",
+    "fan_auto": "ffffff41ffffffffffffffffffffffffffffff",
+    "swing_off": "ffffffff31ffffffffffffffffffffffffffff",
+    "power_100": "ffffffffff64ffffffffffffffffffffffffff",
+    "merit_a_off": "fffffffffffff0ffffffffffffffffffffffff",
+    "merit_b_off": "ffffffffffff0fffffffffffffffffffffffff",
+    "pure_ion_off": "ffffffffffffff10ffffffffffffffffffffff",
+    "empty": "ffffffffffffffffffffffffffffffffffffff"
+  },
+  "features": [
+    {
+      "merit": "0000",
+      "model": "1",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "0000",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "0000",
+      "model": "3",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "0100",
+      "model": "2",
+      "modes": [
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "0200",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "4000",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL",
+        "SWING_HORIZONTAL",
+        "SWING_VERTICAL_AND_HORIZONTAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "8000",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO",
+        "FLOOR"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "FLOOR"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "2000",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO",
+        "CDU_SILENT_1",
+        "CDU_SILENT_2"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "1000",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF",
+        "ON"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "0800",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF",
+        "FIREPLACE_1",
+        "FIREPLACE_2"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF",
+            "FIREPLACE_1",
+            "FIREPLACE_2"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "0400",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO",
+        "HEATING_8C"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "HEATING_8C"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "fc00",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL",
+        "SWING_HORIZONTAL",
+        "SWING_VERTICAL_AND_HORIZONTAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO",
+        "FLOOR",
+        "CDU_SILENT_1",
+        "CDU_SILENT_2",
+        "HEATING_8C"
+      ],
+      "merit_b": [
+        "OFF",
+        "FIREPLACE_1",
+        "FIREPLACE_2"
+      ],
+      "air_pure_ion": [
+        "OFF",
+        "ON"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "FLOOR",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2",
+            "HEATING_8C"
+          ],
+          "merit_b": [
+            "OFF",
+            "FIREPLACE_1",
+            "FIREPLACE_2"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "fc03",
+      "model": "3",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL",
+        "SWING_HORIZONTAL",
+        "SWING_VERTICAL_AND_HORIZONTAL",
+        "FIXED_1",
+        "FIXED_2",
+        "FIXED_3",
+        "FIXED_4",
+        "FIXED_5"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO",
+        "FLOOR",
+        "CDU_SILENT_1",
+        "CDU_SILENT_2",
+        "HEATING_8C"
+      ],
+      "merit_b": [
+        "OFF",
+        "FIREPLACE_1",
+        "FIREPLACE_2"
+      ],
+      "air_pure_ion": [
+        "OFF",
+        "ON"
+      ],
+      "energy_report": true,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "FLOOR",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2",
+            "HEATING_8C"
+          ],
+          "merit_b": [
+            "OFF",
+            "FIREPLACE_1",
+            "FIREPLACE_2"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "0003",
+      "model": "3",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL",
+        "FIXED_1",
+        "FIXED_2",
+        "FIXED_3",
+        "FIXED_4",
+        "FIXED_5"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": true,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "0001",
+      "model": "3",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": true,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "0002",
+      "model": "3",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL",
+        "FIXED_1",
+        "FIXED_2",
+        "FIXED_3",
+        "FIXED_4",
+        "FIXED_5"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "ffff",
+      "model": "3",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL",
+        "SWING_HORIZONTAL",
+        "SWING_VERTICAL_AND_HORIZONTAL",
+        "FIXED_1",
+        "FIXED_2",
+        "FIXED_3",
+        "FIXED_4",
+        "FIXED_5"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO",
+        "FLOOR",
+        "CDU_SILENT_1",
+        "CDU_SILENT_2",
+        "HEATING_8C"
+      ],
+      "merit_b": [
+        "OFF",
+        "FIREPLACE_1",
+        "FIREPLACE_2"
+      ],
+      "air_pure_ion": [
+        "OFF",
+        "ON"
+      ],
+      "energy_report": true,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "FLOOR",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2",
+            "HEATING_8C"
+          ],
+          "merit_b": [
+            "OFF",
+            "FIREPLACE_1",
+            "FIREPLACE_2"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "ff",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL",
+        "SWING_HORIZONTAL",
+        "SWING_VERTICAL_AND_HORIZONTAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO",
+        "FLOOR",
+        "CDU_SILENT_1",
+        "CDU_SILENT_2",
+        "HEATING_8C"
+      ],
+      "merit_b": [
+        "OFF",
+        "FIREPLACE_1",
+        "FIREPLACE_2"
+      ],
+      "air_pure_ion": [
+        "OFF",
+        "ON"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO",
+            "FLOOR",
+            "CDU_SILENT_1",
+            "CDU_SILENT_2",
+            "HEATING_8C"
+          ],
+          "merit_b": [
+            "OFF",
+            "FIREPLACE_1",
+            "FIREPLACE_2"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "",
+      "model": "1",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN",
+        "HEAT"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "HEAT": {
+          "merit_a": [
+            "OFF",
+            "SLEEP_CARE",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    },
+    {
+      "merit": "12345",
+      "model": "2",
+      "modes": [
+        "AUTO",
+        "COOL",
+        "DRY",
+        "FAN"
+      ],
+      "fan_modes": [
+        "AUTO",
+        "QUIET",
+        "LOW",
+        "MEDIUM_LOW",
+        "MEDIUM",
+        "MEDIUM_HIGH",
+        "HIGH"
+      ],
+      "swing_modes": [
+        "OFF",
+        "SWING_VERTICAL"
+      ],
+      "power_selections": [
+        "POWER_50",
+        "POWER_75",
+        "POWER_100"
+      ],
+      "merit_a": [
+        "OFF",
+        "SLEEP_CARE",
+        "COMFORT",
+        "HIGH_POWER",
+        "ECO"
+      ],
+      "merit_b": [
+        "OFF"
+      ],
+      "air_pure_ion": [
+        "OFF",
+        "ON"
+      ],
+      "energy_report": false,
+      "per_mode": {
+        "AUTO": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "COOL": {
+          "merit_a": [
+            "OFF",
+            "COMFORT",
+            "HIGH_POWER",
+            "ECO"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "DRY": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        },
+        "FAN": {
+          "merit_a": [
+            "OFF",
+            "COMFORT"
+          ],
+          "merit_b": [
+            "OFF"
+          ]
+        }
+      }
+    }
+  ],
+  "commands": [
+    {
+      "case": "on",
+      "initial": "heat_off",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_status",
+      "value": "ON",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': '30ffffffffffffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "30ffffffffffffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "off",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_status",
+      "value": "OFF",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': '31ffffffffffffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "31ffffffffffffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "mode_heat",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_mode",
+      "value": "HEAT",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ff43ffffffffffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ff43ffffffffffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "mode_dry_clears_eco",
+      "initial": "eco_silent",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_mode",
+      "value": "DRY",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ff44fffffffff0ffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ff44fffffffff0ffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "mode_cool_clears_8c",
+      "initial": "heat_8c",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_mode",
+      "value": "COOL",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ff42fffffffff0ffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ff42fffffffff0ffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "temperature",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_temperature",
+      "value": 23,
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffff17ffffffffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffff17ffffffffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "temperature_8c",
+      "initial": "heat_8c",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_temperature",
+      "value": 10,
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffff1affffffffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffff1affffffffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "fan_quiet",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_fan_mode",
+      "value": "QUIET",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffffff31ffffffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffffff31ffffffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "fan_high",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_fan_mode",
+      "value": "HIGH",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffffff36ffffffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffffff36ffffffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "swing_both",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_swing_mode",
+      "value": "SWING_VERTICAL_AND_HORIZONTAL",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffffffff43ffffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffffffff43ffffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "swing_fixed_3",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_swing_mode",
+      "value": "FIXED_3",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffffffff52ffffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffffffff52ffffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "swing_unsupported",
+      "initial": "cool_on",
+      "merit": "0000",
+      "model": "1",
+      "setter": "set_ac_swing_mode",
+      "value": "SWING_HORIZONTAL",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffffffffffffffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffffffffffffffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "power_50",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_power_selection",
+      "value": "POWER_50",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffffffffff32ffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffffffffff32ffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "power_75",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_power_selection",
+      "value": "POWER_75",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffffffffff4bffffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffffffffff4bffffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "eco",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_merit_a",
+      "value": "ECO",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'fffffffffffff3ffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "fffffffffffff3ffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "hi_power",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_merit_a",
+      "value": "HIGH_POWER",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'fffffffffffff1ffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "fffffffffffff1ffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "silent_1",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_merit_a",
+      "value": "CDU_SILENT_1",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'fffffffffffff2ffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "fffffffffffff2ffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "silent_2",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_merit_a",
+      "value": "CDU_SILENT_2",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'fffffffffffffaffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "fffffffffffffaffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "merit_off",
+      "initial": "eco_silent",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_merit_a",
+      "value": "OFF",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'fffffffffffff0ffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "fffffffffffff0ffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "eco_in_fan_mode",
+      "initial": "fan_fixed",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_merit_a",
+      "value": "ECO",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'fffffffffffff0ffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "fffffffffffff0ffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "eco_model_1",
+      "initial": "cool_on",
+      "merit": "0000",
+      "model": "1",
+      "setter": "set_ac_merit_a",
+      "value": "ECO",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'fffffffffffff0ffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "fffffffffffff0ffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "heating_8c",
+      "initial": "heat_off",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_merit_a",
+      "value": "HEATING_8C",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'fffffffffffff4ffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "fffffffffffff4ffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "fireplace_1",
+      "initial": "heat_off",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_merit_b",
+      "value": "FIREPLACE_1",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffffffffffff2fffffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffffffffffff2fffffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "pure_ion_on",
+      "initial": "cool_on",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_air_pure_ion",
+      "value": "ON",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': 'ffffffffffffff18ffffffffffffffffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "ffffffffffffff18ffffffffffffffffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    },
+    {
+      "case": "on_clears_self_cleaning",
+      "initial": "self_cleaning",
+      "merit": "fc03",
+      "model": "3",
+      "setter": "set_ac_status",
+      "value": "ON",
+      "raw": "{'sourceId': 'user@example.com_0123456789abcdef', 'messageId': '0000000', 'targetId': ['unique-id'], 'cmd': 'CMD_FCU_TO_AC', 'payload': {'data': '30ffffffffffffffffffffffffff10ffffffff'}, 'timeStamp': '0000000'}",
+      "message": {
+        "sourceId": "user@example.com_0123456789abcdef",
+        "messageId": "0000000",
+        "targetId": [
+          "unique-id"
+        ],
+        "cmd": "CMD_FCU_TO_AC",
+        "payload": {
+          "data": "30ffffffffffffffffffffffffff10ffffffff"
+        },
+        "timeStamp": "0000000"
+      }
+    }
+  ],
+  "heartbeats": [
+    {
+      "payload": {
+        "iTemp": "16",
+        "oTemp": "fe"
+      },
+      "values": {
+        "iTemp": 22,
+        "oTemp": -2
+      },
+      "changed": true,
+      "indoor_temperature": 22,
+      "outdoor_temperature": -2
+    },
+    {
+      "payload": {
+        "iTemp": "7e",
+        "oTemp": "7f"
+      },
+      "values": {
+        "iTemp": 126,
+        "oTemp": 127
+      },
+      "changed": true,
+      "indoor_temperature": -1,
+      "outdoor_temperature": null
+    },
+    {
+      "payload": {
+        "iTemp": "14"
+      },
+      "values": {
+        "iTemp": 20
+      },
+      "changed": true,
+      "indoor_temperature": 20,
+      "outdoor_temperature": 30
+    }
+  ],
+  "reprs": [
+    {
+      "object": {
+        "sourceId": "o'neil_0123456789abcdef",
+        "targetId": [
+          "a"
+        ]
+      },
+      "text": "{'sourceId': \"o'neil_0123456789abcdef\", 'targetId': ['a']}"
+    },
+    {
+      "object": {
+        "sourceId": "say \"hi\"_0123456789abcdef",
+        "targetId": [
+          "a"
+        ]
+      },
+      "text": "{'sourceId': 'say \"hi\"_0123456789abcdef', 'targetId': ['a']}"
+    },
+    {
+      "object": {
+        "sourceId": "both'\"_x",
+        "targetId": [
+          "a"
+        ]
+      },
+      "text": "{'sourceId': 'both\\'\"_x', 'targetId': ['a']}"
+    },
+    {
+      "object": {
+        "sourceId": "back\\slash\tand\nnew",
+        "targetId": [
+          "a"
+        ]
+      },
+      "text": "{'sourceId': 'back\\\\slash\\tand\\nnew', 'targetId': ['a']}"
+    },
+    {
+      "object": {
+        "sourceId": "accentu\u00e9_0123456789abcdef",
+        "targetId": [
+          "\u00e9"
+        ]
+      },
+      "text": "{'sourceId': 'accentu\u00e9_0123456789abcdef', 'targetId': ['\u00e9']}"
+    }
+  ]
+}

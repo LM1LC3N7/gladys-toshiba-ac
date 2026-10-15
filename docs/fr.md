@@ -1,67 +1,120 @@
-# Template de démonstration
+# Toshiba Home AC Control (climatiseurs)
 
-Ceci est la documentation utilisateur de l'intégration. Gladys ré-héberge ce
-fichier et affiche un lien **Documentation** permanent vers lui dans l'écran
-de configuration (dans la langue de l'utilisateur, avec l'anglais en repli) —
-c'est au moment de configurer que l'utilisateur en a le plus besoin. Gardez
-les courtes indications d'accueil dans les blocs `section` du `config_schema`
-du manifest ; mettez ici le pas-à-pas détaillé (captures d'écran, dépannage…).
+Les climatiseurs et pompes à chaleur air-air Toshiba connectés en Wi-Fi
+(adaptateur **RB-N105S-G / RB-N106S-G**, ou Wi-Fi intégré) se pilotent avec
+l'application **Toshiba Home AC Control**, à travers le cloud Toshiba. Cette
+intégration se connecte à ce cloud avec le compte de votre application, comme
+le fait l'application, et amène vos appareils dans Gladys : marche/arrêt,
+mode, consigne, ventilation, balayage, modes ECO, Hi-POWER, silencieux et
+hors-gel 8 °C, températures intérieure et extérieure, en temps réel.
+
+**Non officiel** : sans lien avec Toshiba ni avec Toshiba Carrier.
+
+> **Version de développement (0.1).** Portée de la bibliothèque Python
+> `toshiba-ac` qu'utilise l'intégration Home Assistant, et vérifiée par
+> rapport à ce que calcule cette bibliothèque ; pas encore testée avec un vrai
+> compte Toshiba. Vos retours sont les bienvenus sur le dépôt GitHub.
+
+## Quels appareils
+
+- **Oui** : les appareils que vous pilotez avec l'application **Toshiba Home
+  AC Control** (par exemple les Seiya, Shorai, Daiseikai et consoles vendus
+  en Europe).
+- **Non** : les climatiseurs de fenêtre et mobiles nord-américains de
+  l'application **Toshiba AC NA**. Ils sont fabriqués par Midea et passent par
+  le cloud Midea : utilisez pour eux l'intégration **Midea** du store Gladys.
 
 ## Ce que vous obtenez
 
-Six appareils de démonstration apparaissent après l'installation : une
-station météo (vraies données Open-Meteo), un interrupteur, une lampe
-variable, une prise connectée avec mesure de puissance, un détecteur de
-mouvement et une caméra.
+Un climatiseur Gladys par appareil du compte, avec les fonctionnalités que
+l'appareil a (Toshiba les indique dans la liste des appareils) :
 
-## Configuration
+| Fonctionnalité                      | Dans Gladys                                                                                                                         |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Marche/arrêt                        | marche/arrêt du climatiseur                                                                                                         |
+| Mode                                | auto, froid, chaud, déshumidification, ventilation (ceux de l'appareil)                                                             |
+| Consigne                            | 17 à 30 °C, au degré ; 5 à 13 °C en hors-gel 8 °C                                                                                   |
+| Ventilation                         | auto, silencieux, faible, moyenne basse, moyenne, moyenne haute, forte                                                              |
+| Balayage vertical                   | arrêt, balayage, et les 5 positions fixes du volet si l'appareil les a                                                              |
+| Balayage horizontal                 | arrêt, balayage (appareils avec balayage horizontal)                                                                                |
+| Sélection de puissance              | 50 %, 75 %, 100 %                                                                                                                   |
+| Mode spécial                        | aucun, Hi-POWER, ECO, silencieux 1/2 (unité extérieure), hors-gel 8 °C, sommeil, sol, confort — un seul à la fois, selon l'appareil |
+| Mode cheminée                       | arrêt, cheminée 1, cheminée 2 (appareils qui l'ont, en mode chaud)                                                                  |
+| Purificateur d'air                  | marche/arrêt (appareils avec Air Pure Ion)                                                                                          |
+| Températures intérieure, extérieure | capteurs de température (°C)                                                                                                        |
+| Énergie de l'année                  | kWh depuis le 1er janvier (appareils qui la remontent)                                                                              |
 
-1. Ouvrez l'onglet **Configuration** de l'intégration.
-2. Renseignez la **latitude** et la **longitude** que la station météo de
-   démonstration doit observer (Paris par défaut), et choisissez votre unité
-   de température. L'**intervalle de rafraîchissement** règle la fréquence
-   de lecture de la station météo et de la puissance de la prise : toutes
-   les 5 minutes par défaut, toutes les minutes au plus.
-3. Enregistrez : les appareils apparaissent dans l'onglet **Découverte**,
-   prêts à être ajoutés.
+Les modes spéciaux suivent les règles de Toshiba : ECO, Hi-POWER et
+silencieux en auto, froid et chaud ; hors-gel 8 °C, sol et sommeil en chaud
+seulement. Passer en déshumidification ou ventilation arrête le mode spécial,
+comme le fait l'application.
 
-Le réglage **Préférer la connexion locale** pilote la prise de
-démonstration : elle affiche en badge le canal réellement utilisé (local ou
-cloud), avec un point orange quand elle fonctionne en mode dégradé (local
-refusé, bascule cloud).
+## Installation
 
-## Actions
+1. Vérifiez que vos appareils fonctionnent dans l'application Toshiba Home AC
+   Control.
+2. Dans la configuration de l'intégration, saisissez le **nom d'utilisateur**
+   et le **mot de passe** de l'application. **Le nom d'utilisateur n'est
+   souvent pas votre adresse e-mail** : beaucoup de comptes ont un nom
+   d'utilisateur court, affiché dans l'écran du compte de l'application.
+3. Cliquez sur **Tester la connexion** : les appareils du compte sont listés.
+4. Ouvrez l'onglet **Découverte** et ajoutez vos appareils.
 
-- **Tester le fournisseur météo** — effectue une requête en direct vers
-  Open-Meteo et affiche la température et l'humidité actuelles sous le
-  bouton.
-- **Identifier un appareil** — choisissez un de vos appareils dans la liste
-  et il se signale (la lampe de démonstration « clignote » dans les logs).
+**Saisissez bien le mot de passe** : après deux connexions refusées de suite,
+Toshiba bloque le compte quelques heures, et pendant ce temps même le bon mot
+de passe est refusé. L'intégration ne retente jamais toute seule une connexion
+refusée : corrigez la configuration et enregistrez-la.
 
-## Scènes
+## Options
 
-L'intégration ajoute ses propres cartes à l'éditeur de scènes (Gladys 5.1
-ou plus récent), dans la catégorie **Intégrations** :
+| Option                             | Défaut   | Rôle                                         |
+| ---------------------------------- | -------- | -------------------------------------------- |
+| Langue des noms de fonctionnalités | Français | noms des fonctionnalités et de leurs options |
 
-- **Mouvement détecté** (déclencheur) — lance la scène quand un détecteur
-  de démonstration voit bouger quelque chose. Choisissez éventuellement le
-  détecteur et ce qui a bougé (personne, animal) ; laissés vides, toute
-  détection correspond. Les actions suivantes peuvent lire ce qui a bougé
-  avec `{{triggerEvent.data.target}}`.
-- **Identifier un appareil** (action) — fait se signaler l'appareil choisi.
-  Elle indique si l'appareil a pu se signaler, pour que les actions
-  suivantes puissent en dépendre.
+## Fonctionnement
 
-## Tableau de bord
+- Gladys parle au cloud Toshiba par Internet, jamais directement à
+  l'appareil : l'appareil doit être en ligne dans l'application.
+- **Liaison temps réel** : Gladys s'enregistre comme un téléphone de votre
+  compte et se connecte à l'IoT Hub Toshiba (Microsoft Azure). Les appareils y
+  envoient leurs changements et, régulièrement, leurs températures, et **les
+  commandes passent par elle** : tant qu'elle est coupée, les appareils sont
+  lus mais pas pilotables.
+- Les états sont aussi lus par l'API Toshiba toutes les 30 minutes (toutes
+  les 5 minutes tant que la liaison temps réel est coupée), et dès son retour.
+- La connexion est gardée dans le dossier `/data` de l'intégration (Toshiba
+  la donne pour environ trois ans) : un redémarrage de Gladys ne se reconnecte
+  pas, car Toshiba limite le nombre de connexions. Le mot de passe n'y est
+  jamais écrit.
+- Le badge de transport de chaque appareil affiche **cloud**, avec un point
+  orange tant que la liaison temps réel est coupée, ou **injoignable** quand
+  le cloud Toshiba ne répond pas.
 
-Ajoutez le widget **État de la démo** à un tableau de bord : il affiche en
-direct la température de la station météo et la puissance de la prise du
-bureau, la connexion utilisée par la prise (en orange si dégradée) et la
-position observée. Son bouton **Identifier la lampe** fait se signaler la
-lampe de démonstration.
+## En cas de problème
 
-## Dépannage
+- **« a refusé le nom d'utilisateur ou le mot de passe »** : essayez le nom
+  d'utilisateur de l'écran du compte de l'application plutôt que l'e-mail.
+  Les mots de passe très longs avec beaucoup de symboles posent problème :
+  simplifiez-le dans l'application si besoin.
+- **« Toshiba ralentit cette connexion »** : le pare-feu Toshiba limite le
+  débit ; cela ne dit rien de votre mot de passe. Patientez, l'intégration
+  réessaie toute seule (après le délai demandé par Toshiba, jusqu'à une
+  heure).
+- **« a refusé la liaison temps réel, même avec un nouveau jeton »** : un
+  autre client utilise peut-être la même identité. L'intégration enregistre
+  sa propre identité : si vous faites tourner deux Gladys sur le même compte,
+  ou avez copié le dossier `/data` de l'un vers l'autre, donnez à chacun son
+  propre `/data`.
+- **Une commande échoue avec « liaison temps réel … coupée »** : attendez la
+  reconnexion (l'état indique quand) et réessayez.
+- **La consigne est refusée** : 17 à 30 °C, ou 5 à 13 °C en hors-gel 8 °C.
 
-L'intégration journalise tout ce qu'elle fait : consultez les logs de
-l'intégration depuis l'interface Gladys (ou `docker logs` sur l'hôte) avec
-`LOG_LEVEL=debug` pour le détail complet.
+## Crédits
+
+Le protocole (états, commandes, fonctionnalités prises en charge) est porté
+de la bibliothèque Python [toshiba-ac](https://github.com/KaSroka/Toshiba-AC-control)
+de Kamil Sroka (licence Apache 2.0), utilisée par l'intégration Home Assistant
+[home-assistant-toshiba_ac](https://github.com/h4de5/home-assistant-toshiba_ac).
+Le comportement du pare-feu Toshiba vient des notes de cette intégration et
+du plugin [homebridge-toshiba-home-ac](https://www.npmjs.com/package/homebridge-toshiba-home-ac)
+d'Onur Yuksel (MIT).

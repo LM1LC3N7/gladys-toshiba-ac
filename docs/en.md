@@ -1,61 +1,112 @@
-# Demo Devices Template
+# Toshiba Home AC Control (air conditioners)
 
-This is the user documentation of the integration. Gladys re-hosts this file
-and shows a permanent **Documentation** link to it in the Configuration screen
-(in the user's language, with English as the fallback) — it is when
-configuring that the user needs it most. Keep the short onboarding hints in
-the `section` blocks of the manifest `config_schema`; put the long
-step-by-step (screenshots, troubleshooting…) here.
+Toshiba air conditioners and air-to-air heat pumps with Wi-Fi (the
+**RB-N105S-G / RB-N106S-G** adapter, or built-in Wi-Fi) are controlled with the
+**Toshiba Home AC Control** app, through the Toshiba cloud. This integration
+signs in to that cloud with the account of your app, like the app does, and
+brings your units into Gladys: turn them on and off, change the mode, the
+setpoint, the fan and the swing, use the ECO, Hi-POWER, silent and 8 °C
+heating modes, and follow the indoor and outdoor temperatures, live.
+
+**Unofficial**: not affiliated with Toshiba nor with Toshiba Carrier.
+
+> **Development version (0.1).** Ported from the `toshiba-ac` Python library
+> that the Home Assistant integration uses, and checked against what that
+> library computes; not yet tested with a real Toshiba account. Your feedback
+> is welcome on the GitHub repository.
+
+## Which units
+
+- **Yes**: the units you control with the **Toshiba Home AC Control** app
+  (for example Seiya, Shorai, Daiseikai and the consoles sold in Europe).
+- **No**: the North American window and portable units of the **Toshiba AC NA**
+  app. They are made by Midea and use the Midea cloud: use the **Midea**
+  integration of the Gladys store for them.
 
 ## What you get
 
-Six demo devices show up after installation: a weather station (real data
-from Open-Meteo), a switch, a dimmable light, a smart plug with power
-metering, a motion sensor and a camera.
+One Gladys air conditioner per unit of the account, with the features the unit
+supports (Toshiba says which in the device list):
 
-## Configuration
+| Feature                     | In Gladys                                                                                                                 |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| On/off                      | air conditioner on/off                                                                                                    |
+| Mode                        | auto, cool, heat, dry, fan (only the modes of the unit)                                                                   |
+| Setpoint                    | 17 to 30 °C, whole degrees; 5 to 13 °C in 8 °C heating                                                                    |
+| Fan speed                   | auto, quiet, low, medium low, medium, medium high, high                                                                   |
+| Vertical swing              | off, swing, and the 5 fixed louver positions when the unit has them                                                       |
+| Horizontal swing            | off, swing (units with horizontal swing)                                                                                  |
+| Power selection             | 50 %, 75 %, 100 %                                                                                                         |
+| Special mode                | none, Hi-POWER, ECO, silent 1/2 (outdoor unit), 8 °C heating, sleep, floor, comfort — one at a time, as the unit supports |
+| Fireplace mode              | off, fireplace 1, fireplace 2 (units that have it, heat mode)                                                             |
+| Air purifier                | on/off (units with Air Pure Ion)                                                                                          |
+| Indoor, outdoor temperature | temperature sensors (°C)                                                                                                  |
+| Energy this year            | kWh since January 1st (units that report it)                                                                              |
 
-1. Open the **Configuration** tab of the integration.
-2. Set the **latitude** and **longitude** the demo weather station should
-   observe (they default to Paris), and pick your temperature unit.
-   The **refresh interval** sets how often the weather station and the
-   plug's power are read: every 5 minutes by default, every minute at most.
-3. Save: the devices appear in the **Discovery** tab, ready to be added.
+The special modes follow Toshiba's rules: ECO, Hi-POWER and silent work in
+auto, cool and heat; 8 °C heating, floor and sleep in heat only. Switching to
+dry or fan mode turns the special mode off, like the app does.
 
-The **Prefer the local connection** toggle drives the demo plug: it reports
-the channel it actually uses as a badge (local or cloud), with an orange dot
-when it runs degraded (local refused, cloud fallback).
+## Installation
 
-## Actions
+1. Check that your units work in the Toshiba Home AC Control app.
+2. In the configuration of the integration, type the **user name** and the
+   **password** of the app. **The user name is often not your e-mail
+   address**: many accounts have a short user name, shown in the account
+   screen of the app.
+3. Click **Test the connection**: the units of the account are listed.
+4. Open the **Discovery** tab and add your units.
 
-- **Test the weather provider** — performs a live request to Open-Meteo and
-  shows the current temperature and humidity under the button.
-- **Identify a device** — pick one of your devices in the list and it will
-  signal itself (the demo light "blinks" in the logs).
+**Type the password carefully**: after two refused logins in a row, Toshiba
+blocks the account for a few hours, and while it is blocked even the right
+password is refused. The integration never retries a refused login on its
+own: fix the configuration and save it.
 
-## Scenes
+## Options
 
-The integration adds its own cards to the scene editor (Gladys 5.1 or
-later), under the **Integrations** category:
+| Option                        | Default | Purpose                                    |
+| ----------------------------- | ------- | ------------------------------------------ |
+| Language of the feature names | French  | names of the features and of their options |
 
-- **Motion detected** (trigger) — starts the scene when a demo motion sensor
-  sees something move. Optionally pick the sensor and what moved (person,
-  animal); left empty, any detection matches. The following actions can
-  read what moved with `{{triggerEvent.data.target}}`.
-- **Identify a device** (action) — makes the chosen device signal itself.
-  It returns whether the device could signal itself, so the following
-  actions can depend on it.
+## How it works
 
-## Dashboard
-
-Add the **Demo status** widget to a dashboard: it shows the live
-temperature of the weather station and the power of the office plug, the
-connection the plug currently uses (orange when degraded) and the observed
-location. Its **Identify the light** button makes the demo light signal
-itself.
+- Gladys talks to the Toshiba cloud over the Internet, never to the unit
+  directly: the unit must be online in the app.
+- **Live link**: Gladys registers as a phone of your account and connects to
+  the Toshiba IoT Hub (Microsoft Azure). The units send their changes and a
+  regular heartbeat with their temperatures through it, and **the commands go
+  through it**: while it is down, the units can be read but not controlled.
+- The states are also read over the Toshiba API every 30 minutes (every 5
+  minutes while the live link is down), and right after it comes back.
+- The sign-in is kept in the `/data` folder of the integration (Toshiba gives
+  it for about three years), so a restart of Gladys does not sign in again:
+  Toshiba limits the number of sign-ins. The password is never written there.
+- The transport badge of each unit shows **cloud**, with an orange dot while
+  the live link is down, or **unreachable** when the Toshiba cloud does not
+  answer.
 
 ## Troubleshooting
 
-The integration logs everything it does: check the integration logs from the
-Gladys UI (or `docker logs` on the host) with `LOG_LEVEL=debug` for the full
-detail.
+- **"refused the user name or the password"**: try the user name of the
+  account screen of the app instead of the e-mail. Very long passwords with
+  many symbols are known to fail: simplify it in the app if needed.
+- **"Toshiba is slowing this connection down"**: the Toshiba firewall
+  throttles; it says nothing about your password. Wait, the integration tries
+  again by itself (after the delay Toshiba asks, up to one hour).
+- **"refused the live link even with a new token"**: another client may use
+  the same identity. The integration registers its own identity: if you run
+  two Gladys on the same account, or copied the `/data` folder of one to the
+  other, give each its own `/data`.
+- **A command fails with "live link … down"**: wait for the reconnection (the
+  status says when) and try again.
+- **The setpoint is refused**: 17 to 30 °C, or 5 to 13 °C in 8 °C heating.
+
+## Credits
+
+The protocol (states, commands, supported features) is ported from the
+[toshiba-ac](https://github.com/KaSroka/Toshiba-AC-control) Python library by
+Kamil Sroka (Apache License 2.0), used by the Home Assistant integration
+[home-assistant-toshiba_ac](https://github.com/h4de5/home-assistant-toshiba_ac).
+The behaviour of the Toshiba firewall comes from the notes of that integration
+and of the [homebridge-toshiba-home-ac](https://www.npmjs.com/package/homebridge-toshiba-home-ac)
+plugin by Onur Yuksel (MIT).

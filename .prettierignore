@@ -2,3 +2,5 @@ node_modules/
 package-lock.json
 data/
 *.log
+# Output of the toshiba-ac Python library, kept as generated.
+test/fixtures/toshiba-ac/

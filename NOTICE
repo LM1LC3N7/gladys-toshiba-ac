@@ -1,0 +1,29 @@
+gladys-toshiba-ac
+Copyright 2026 LM1LC3N7 and the gladys-toshiba-ac contributors
+
+This product is licensed under the Apache License, Version 2.0.
+
+It includes work ported from:
+
+- toshiba-ac (Toshiba-AC-control)
+  https://github.com/KaSroka/Toshiba-AC-control
+  Copyright 2021-2022 Kamil Sroka, Apache License, Version 2.0.
+  The unit state field map (toshiba_ac/device/fcu_state.py), the supported
+  features (toshiba_ac/device/features.py), the command rules
+  (toshiba_ac/device/__init__.py), the REST API calls
+  (toshiba_ac/utils/http_api.py) and the live link messages
+  (toshiba_ac/utils/amqp_api.py). test/fixtures/toshiba-ac/golden.json is
+  the output of that library (version 0.3.13) on hand-made inputs.
+
+Read as documentation, nothing copied:
+
+- home-assistant-toshiba_ac, https://github.com/h4de5/home-assistant-toshiba_ac
+  (GPL-3.0): the Device-ID header, the SAS token recovery.
+- homebridge-toshiba-home-ac by Onur Yuksel (MIT): the User-Agent and fetch
+  measurements against the Toshiba firewall, the session lifetime.
+- @jonaskpb/homebridge-toshiba-ac, https://github.com/jonaskpb/homebridge-toshiba-ac
+  (Apache-2.0): the IoT Hub over plain MQTT.
+
+Toshiba and Toshiba Home AC Control are trademarks of their respective owners.
+This project is not affiliated with, endorsed by or sponsored by Toshiba,
+Toshiba Carrier or Carrier.
