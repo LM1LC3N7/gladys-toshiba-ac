@@ -1,6 +1,6 @@
 {
   "name": "gladys-toshiba-ac",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Gladys Assistant external integration for the Toshiba air conditioners of the Toshiba Home AC Control app. Unofficial, not affiliated with Toshiba.",
   "type": "module",

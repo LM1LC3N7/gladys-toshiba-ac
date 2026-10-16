@@ -6,8 +6,8 @@
     "en": "Your Toshiba Home AC Control air conditioners: mode, setpoint, fan, swing, ECO, Hi-POWER…",
     "fr": "Vos climatiseurs Toshiba Home AC Control : mode, consigne, ventilation, balayage, ECO…"
   },
-  "version": "0.1.0",
-  "docker_image": "ghcr.io/lm1lc3n7/gladys-toshiba-ac:0.1.0",
+  "version": "0.1.1",
+  "docker_image": "ghcr.io/lm1lc3n7/gladys-toshiba-ac:0.1.1",
   "gladys_version": ">=5.1.0",
   "cover_image": "https://raw.githubusercontent.com/LM1LC3N7/gladys-toshiba-ac/main/cover.png",
   "categories": ["climate"],

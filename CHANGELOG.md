@@ -10,6 +10,8 @@ the notes of the version's GitHub Release.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-16
+
 ### Added
 
 - Login to Toshiba Home AC Control with the user name and the password of the
@@ -31,4 +33,5 @@ the notes of the version's GitHub Release.
   is down), the Toshiba rate limit honoured (Retry-After, up to one hour).
 - "Test the connection" button.
 
-[Unreleased]: https://github.com/LM1LC3N7/gladys-toshiba-ac/commits/main
+[Unreleased]: https://github.com/LM1LC3N7/gladys-toshiba-ac/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/LM1LC3N7/gladys-toshiba-ac/releases/tag/v0.1.1
