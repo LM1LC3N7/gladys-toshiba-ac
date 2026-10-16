@@ -10,6 +10,11 @@ the notes of the version's GitHub Release.
 
 ## [Unreleased]
 
+### Changed
+
+- README: the store install note replaces the work-in-progress notice, and the
+  Releasing section no longer says the store topic is still to be added.
+
 ## [0.1.1] - 2026-10-16
 
 ### Added
