@@ -136,3 +136,7 @@ up to date at the end of every milestone.
 - **Status**: `connected` only when the live link is up (commands work); the
   live link down shows `cloud` + degraded badges with a message (the SDK
   shows a message only with `degraded: true`).
+
+## Next patch (review minmax-cvc-r1, minors)
+
+- [ ] `test/helpers/coreFeature.js` (or the features test): put back the checks that supported options only have `label`, `sort_order`, `value`, and that `sort_order` is an integer (today only enforced through the core clone, not on GitHub CI).
