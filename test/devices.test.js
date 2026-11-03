@@ -4,6 +4,15 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { homedir } from 'node:os';
+import { join } from 'node:path';
+import {
+  DEVICE_FEATURE_CATEGORIES as C,
+  DEVICE_FEATURE_TYPES as T,
+  DEVICE_FEATURE_UNITS as U,
+} from '@gladysassistant/integration-sdk';
 import { createFakeGladys } from '@gladysassistant/integration-sdk/testing';
 import { STATE, UNITS } from './fixtures/units.js';
 import { AC_FAN_SPEED, AC_MODE, AC_SWING_VERTICAL } from '../src/constants.js';
@@ -260,4 +269,127 @@ test('what a unit cannot do is refused with a message', () => {
   refused(living, 'fireplace', 'fireplace-1', /only available in heat mode/);
   refused(office, 'air-purifier', 1, /no air purifier/);
   refused(living, 'indoor-temperature', 20, /cannot be controlled/);
+});
+
+// --- Every feature passes the Gladys model (issue #6) -------------------------
+
+/**
+ * Every capability combination the module knows: the merit bits it reads
+ * (0-7, 14, 15, see protocol.js supportedOf) on every model id, plus the
+ * units of the fixtures.
+ */
+function* everyEntry() {
+  const used = [0, 1, 2, 3, 4, 5, 6, 7, 14, 15];
+  for (const model of ['', '1', '2', '3']) {
+    for (let combo = 0; combo < 1 << used.length; combo += 1) {
+      let value = 0;
+      used.forEach((bit, i) => {
+        if (combo & (1 << i)) value |= 1 << (15 - bit);
+      });
+      const merit = value.toString(16).padStart(4, '0');
+      const unit = { uniqueId: `u-${model}-${merit}`, name: `Unit ${merit}`, merit, model };
+      yield { unit, supported: supportedOf(merit, model), ids: idsOf(gladys, unit) };
+    }
+  }
+  for (const ac of Object.values(UNITS)) {
+    yield entryOf(ac);
+  }
+}
+
+const values = (map) => new Set(Object.values(map).flatMap((v) => Object.values(v)));
+const CATEGORIES = new Set(Object.values(C));
+const TYPES = values(T);
+const UNITS_LIST = new Set(Object.values(U));
+
+/** The core rules of t_device_feature (server/models/device_feature.js) and supported_options. */
+function assertCoreFeature(f, where) {
+  for (const key of ['name', 'external_id']) {
+    assert.equal(typeof f[key], 'string', `${where}: ${key}`);
+    assert.ok(f[key].trim().length > 0, `${where}: ${key} not empty`);
+  }
+  assert.ok(CATEGORIES.has(f.category), `${where}: category ${f.category}`);
+  assert.ok(TYPES.has(f.type), `${where}: type ${f.type}`);
+  for (const key of ['read_only', 'has_feedback', 'keep_history']) {
+    assert.equal(typeof f[key], 'boolean', `${where}: ${key} is a boolean`);
+  }
+  for (const key of ['min', 'max']) {
+    assert.ok(Number.isFinite(f[key]), `${where}: ${key} is a number (not null), got ${f[key]}`);
+  }
+  assert.ok(f.min <= f.max, `${where}: min <= max`);
+  if (f.unit !== undefined && f.unit !== null) {
+    assert.ok(UNITS_LIST.has(f.unit), `${where}: unit ${f.unit}`);
+  }
+  if (f.step !== undefined && f.step !== null) {
+    assert.ok(Number.isFinite(f.step) && f.step > 0, `${where}: step > 0`);
+  }
+  if (f.supported_options !== undefined) {
+    const select = f.category === C.TEXT && f.type === T.TEXT.SELECT;
+    assert.ok(f.supported_options.length > 0, `${where}: options`);
+    const seen = new Set();
+    for (const o of f.supported_options) {
+      assert.deepEqual(Object.keys(o).sort(), ['label', 'sort_order', 'value'], `${where}: keys`);
+      assert.equal(typeof o.label, 'string', `${where}: label is a string`);
+      assert.ok(o.label.length > 0 && o.label === o.label.trim(), `${where}: label "${o.label}"`);
+      assert.ok(Number.isInteger(o.sort_order), `${where}: sort_order`);
+      assert.ok(
+        Number.isInteger(o.value) || (select && typeof o.value === 'string' && o.value.trim()),
+        `${where}: value ${o.value}`,
+      );
+      assert.ok(!seen.has(String(o.value)), `${where}: value ${o.value} unique`);
+      seen.add(String(o.value));
+    }
+  }
+}
+
+/** The core's own checks, when its clone is on the machine (dev VM; skipped on the CI). */
+function coreChecks() {
+  const server = join(homedir(), 'code', 'Gladys', 'server');
+  if (!existsSync(join(server, 'node_modules', 'joi'))) {
+    return null;
+  }
+  const require = createRequire(join(server, 'index.js'));
+  const constants = require('./utils/constants.js');
+  const { normalizeSupportedOptions } = require('./utils/normalizeSupportedOptions.js');
+  return { constants, normalizeSupportedOptions };
+}
+
+test('every feature of every buildable device has what the Gladys model needs (issue #6)', () => {
+  const core = coreChecks();
+  let devices = 0;
+  for (const entry of everyEntry()) {
+    for (const language of ['en', 'fr']) {
+      const device = buildDevice(gladys, entry, language);
+      devices += 1;
+      assert.equal(typeof device.name, 'string');
+      assert.equal(typeof device.external_id, 'string');
+      const ids = new Set();
+      for (const f of device.features) {
+        const where = `${entry.unit.merit ?? entry.unit.uniqueId}/${entry.unit.model}/${language} ${f.external_id}`;
+        assert.ok(!ids.has(f.external_id), `${where}: unique external id`);
+        ids.add(f.external_id);
+        assertCoreFeature(f, where);
+        if (core) {
+          assert.ok(core.constants.DEVICE_FEATURE_CATEGORIES_LIST.includes(f.category), where);
+          assert.ok(core.constants.DEVICE_FEATURE_TYPES_LIST.includes(f.type), where);
+          if (f.unit) assert.ok(core.constants.DEVICE_FEATURE_UNITS_LIST.includes(f.unit), where);
+          if (f.supported_options) {
+            const allowStringValues = f.category === C.TEXT && f.type === T.TEXT.SELECT;
+            assert.doesNotThrow(
+              () => core.normalizeSupportedOptions(f.supported_options, { allowStringValues }),
+              where,
+            );
+          }
+        }
+      }
+    }
+  }
+  assert.equal(devices, (4 * 1024 + Object.keys(UNITS).length) * 2);
+});
+
+test('the selects have min 0 and max 0, like the other text/select features of Gladys', () => {
+  const device = buildDevice(gladys, entryOf(UNITS.living), 'fr');
+  for (const key of ['power-selection', 'special-mode', 'fireplace']) {
+    const f = featureOf(device, key);
+    assert.deepEqual([f.category, f.type, f.min, f.max], ['text', 'select', 0, 0], key);
+  }
 });

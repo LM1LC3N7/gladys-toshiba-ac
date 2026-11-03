@@ -222,12 +222,17 @@ export function buildDevice(gladys, entry, language) {
       ),
     );
   }
+  // A text/select carries its value as text, but Gladys still needs a min and
+  // a max (not null in t_device_feature: 422 otherwise, issue #6): 0 and 0,
+  // like the other text/select integrations.
   const select = (key, values, labels, valueOf) =>
     named(
       key,
       command({
         category: C.TEXT,
         type: T.TEXT.SELECT,
+        min: 0,
+        max: 0,
         keep_history: false,
         supported_options: options(values, labels, valueOf),
       }),

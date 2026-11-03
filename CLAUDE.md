@@ -8,7 +8,7 @@ already taken and the next milestones.
 
 A Gladys Assistant **external integration** of type `device`: a Node.js
 service (Node 22+, ESM, no build step) in its own sandboxed Docker container,
-talking to Gladys through `@gladysassistant/integration-sdk` (v0.15). Its one
+talking to Gladys through `@gladysassistant/integration-sdk` (v0.16). Its one
 other runtime dependency is `mqtt`; HTTP is bare `node:https` (never `fetch`,
 see TODO.md Decisions). It signs in to the **Toshiba Home AC Control** cloud
 with the account of the app, turns the units into Gladys AIR_CONDITIONING

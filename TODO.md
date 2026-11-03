@@ -118,6 +118,16 @@ up to date at the end of every milestone.
   air purifier a switch. Options are restricted to what the unit supports
   (supported_options); a value the unit or its current mode does not allow is
   refused with a message (the library would silently send merit OFF).
+- **Selects carry min 0 and max 0** (issue #6, 2026-11-03): Gladys stores
+  `min`/`max` as not null for every feature, text/select included (422
+  otherwise; the SDK fake Gladys does not check it). 0/0 is what most
+  text/select integrations publish (yamaha-ynca, marstek, kef, linn,
+  devialet…); the value of a select is its text, so no numeric range applies.
+  test/devices.test.js checks every feature of every merit/model combination
+  against the core model (and the core's own lists and
+  normalizeSupportedOptions when its clone is on the machine).
+- **SDK 0.16** (2026-11-03): no `poll_frequency` on the devices, so Gladys 5.3
+  does not poll them.
 - **Setpoint** 17–30 °C (the app), 5–13 °C in 8 °C heating; the feature
   minimum is 5 on units that have 8 °C heating. Whole degrees (rounded).
 - **Reloads**: HTTP state every 30 minutes like the library, 5 minutes while

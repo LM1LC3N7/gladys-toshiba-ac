@@ -108,6 +108,11 @@ refusée : corrigez la configuration et enregistrez-la.
 - **Une commande échoue avec « liaison temps réel … coupée »** : attendez la
   reconnexion (l'état indique quand) et réessayez.
 - **La consigne est refusée** : 17 à 30 °C, ou 5 à 13 °C en hors-gel 8 °C.
+- **« HTTP 422 … t_device_feature.min ne peut pas être nul »** en ajoutant un
+  appareil (versions 0.1.1 et antérieures) : Gladys refusait la « Sélection de
+  puissance » et les autres listes. Mettez l'intégration à jour, puis ajoutez
+  l'appareil depuis l'onglet **Découverte**. Gladys n'avait rien enregistré de
+  l'appareil refusé : il n'y a rien à supprimer.
 
 ## Crédits
 

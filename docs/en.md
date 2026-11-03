@@ -100,6 +100,11 @@ own: fix the configuration and save it.
 - **A command fails with "live link … down"**: wait for the reconnection (the
   status says when) and try again.
 - **The setpoint is refused**: 17 to 30 °C, or 5 to 13 °C in 8 °C heating.
+- **"HTTP 422 … t_device_feature.min cannot be null"** when adding a unit
+  (versions 0.1.1 and earlier): Gladys refused the "Power selection" and the
+  other lists. Update the integration, then add the unit from the
+  **Discovery** tab. Gladys saved nothing of the refused unit: there is
+  nothing to delete.
 
 ## Credits
 
