@@ -10,6 +10,8 @@ the notes of the version's GitHub Release.
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-03
+
 ### Fixed
 
 - Adding a unit failed with "HTTP 422 … t_device_feature.min cannot be null"
@@ -52,5 +54,6 @@ the notes of the version's GitHub Release.
   is down), the Toshiba rate limit honoured (Retry-After, up to one hour).
 - "Test the connection" button.
 
-[Unreleased]: https://github.com/LM1LC3N7/gladys-toshiba-ac/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/LM1LC3N7/gladys-toshiba-ac/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/LM1LC3N7/gladys-toshiba-ac/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/LM1LC3N7/gladys-toshiba-ac/releases/tag/v0.1.1
